@@ -1,0 +1,347 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html{
+  font-family: 'Space Grotesk', sans-serif;;
+}
+
+body {
+  max-height: 1024px;
+  height: 100%;
+  width: auto;
+  background: fixed, radial-gradient(circle at 90% 15%,  rgba(18, 146, 250, 0.904), rgba(24, 66, 129, 0) 20%),
+  radial-gradient(circle at 0 100%, rgba(18, 146, 250, 0.904), rgba(11, 10, 90, 0) 45%),
+  radial-gradient(ellipse 100% 60% at 50% 50%, rgba(60, 127, 165, 0.945), rgba(12, 93, 114, 0) 90%),
+  radial-gradient(ellipse 100% 40% at 50% 30%, rgb(81, 215, 248), rgba(23, 10, 197, 0) 80%),
+  radial-gradient(ellipse 100% 100% at 50% 50%,rgba(103, 222, 243, 0.979),rgba(71, 174, 243, 0.459), rgba(20, 5, 235, 0) 100%),
+  radial-gradient(ellipse 100% 60% at 50% 0, rgb(69, 149, 185), rgb(0, 0, 0, 0) 100%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: absolute;
+}
+
+a{
+  text-decoration: none;
+  cursor: pointer;
+}
+
+nav{
+  width: 1348px;
+  height: 60px;
+  display: inline;
+  overflow: hidden;
+  margin-top: 25px;
+}
+
+input:focus{
+  outline: none;
+}
+
+
+header{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+
+.flex{
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  position: relative;
+  width: 121px;
+  height: 60px;
+  overflow: hidden;
+  margin-left: 49px;
+  float: left;
+}
+
+.logo-img {
+  width: 59px;
+  height: 60px;
+  float: left;
+  z-index: -1;
+}
+
+.title {
+  font-size: 16px;
+  line-height: 60px;
+  position: absolute;
+  top: 0;
+  left: 20.3px;
+  right: 0;
+  bottom: 0;
+  font-weight:bolder;
+  font-size: 27.24px; /* Set the font size to match the desired height */
+  width: 75px; /* Set the width of the container */
+  height: 27.24px; 
+  color: black;
+  z-index: 1;
+  float: left;
+}
+
+.menu-bar {
+  width: 961px;
+  height: 43px;
+  margin-top: 3px;
+  overflow: hidden;
+  margin-left: 265px;
+  float: left;
+}
+
+.menu-bar {
+  display: flex;
+  align-items: center;
+}
+
+.menu-bar span{
+  font-size: 34px;
+  margin-right: 35px;
+  font-weight: lighter;
+  color: rgba(224, 224, 224, 0.767);
+}
+
+.menu-bar a,
+.menu-bar button {
+    cursor: pointer;
+    margin-right: 35px;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 1);
+    position: relative;
+    gap: 15px;
+}
+
+.menu-bar a {
+  text-decoration: none;
+  font-weight: bolder;
+  font-size: 20px;
+  color: rgb(255, 255, 255)
+}
+
+.menu-bar a::after{
+  content: '';
+  width: 0%;
+  height: 0.1em;
+  background-color: rgb(252, 252, 252);
+  box-shadow: 0.03em 0.025em 0.03em #ddd, 
+  1px 0px 0px rgb(119, 96, 177),
+  0px -1px 0px rgb(218, 218, 250),
+  0px 1px 0px rgb(205, 188, 253);
+  display: block;
+  margin: auto;
+}
+
+.menu-bar a:hover::after{
+    width: 100%;
+    transition: 0.5s;
+}
+
+.menu-bar button{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  height: 43px;
+  border-radius: 2em;
+  border: 1px solid white;
+  font-weight: bold;
+}
+
+.menu-bar .login{
+  background-color: transparent;
+  color: whitesmoke;
+  width: 94px;
+  margin-right: 15px;
+}
+
+.menu-bar .signup{
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(0, 0, 0, 1);
+  width: 166px;
+}
+
+.menu-bar .login:hover,
+.menu-bar .signup:hover{
+  font-size: larger;
+}
+
+.main{
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  align-items: center;
+}
+
+.main::before {
+  content: "";
+  position: absolute;
+  height: 650px;
+  top: 130px;
+  bottom: 0;
+  left: 50%; /* Position the vertical line at the center */
+  width: 1px; /* Set the width of the line */
+  background-color: rgba(255, 255, 255, 0.753); /* Set the color of the line */
+  transform: translateX(-50%); /* Adjust position to center the line */
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup-content {
+  background: rgba(255, 255, 255, 0.678);
+  width: 778px; /* Set the width of the popup */
+  height: 528px; /* Set the height of the popup */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+}
+
+.popup-content img{
+  position: absolute;
+  left: 40%;
+  top: 100px;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.text{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  left: 788px;
+  top: 120px;
+  color: white;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 76px;
+}
+
+.heading{
+  width: 568px;
+  height: 210px;
+  font-size: 64px;
+  cursor: pointer;
+}
+
+.heading:hover{
+  font-size: 70px;
+  transition: 0.05s;
+}
+
+.subtext{
+  display: flex;
+  width: 513px;
+  height: 207px;
+  left: 810px;
+  top: 497px;
+  font-size: 40px;
+  color: inherit;
+}
+
+.input{
+  position: absolute;
+  display: flex;
+  top: 525px;
+  right: 80px;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 510px;
+  border-radius: 50px;
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  border-top: 3px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 3px solid rgba(255, 255, 255, 0.5);
+}
+
+.input input{
+  display: flex;
+  width: 488px;
+  height: 48px;
+  border: 1.5px solid #dbdadabb;
+  border-radius: 8px;
+  background: #ffffff36;
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  caret-color: rgb(255, 255, 255);
+  margin: 11px;
+  color: rgb(255, 255, 255);
+}
+
+.input input::placeholder{
+  color: rgba(255, 255, 255, 0.918);
+}
+
+.input button{
+  height: 50px;
+  width: 492px;
+  margin-left: 10px;
+  color: rgba(255, 255, 255, 0.856);
+  font-size: 28px;
+  border: none;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 40px;
+  border-radius: 100px;
+  background: black;
+}
+
+
+
+.text button:hover{
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.336);
+  font-size: 28px;
+  color: white;
+  font-weight: bolder;
+  border: 1px solid whitesmoke;
+  transition: 0.15s;
+}
+
+
+.img1{
+  position: absolute;
+  width: 290px;
+  height: 585px;
+  left: 100px;
+  top: 80px;
+  z-index: -1;
+}
+
+.img2{
+  position: absolute;
+  width: 290px;
+  height: 586px;
+  left: 330px;
+  top: 140px;
+  z-index: 1;
+}
